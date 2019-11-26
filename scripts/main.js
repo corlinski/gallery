@@ -20,7 +20,7 @@ function displayMessage(displayText) {
 async function main() {
 
     loader.show();
-    const url = 'https://fakes.herokuapp.com/users';
+    const url = 'data/photos.json';
     const displayText = 'UWAGA TEXT';
 
     const photos1 = await makeRequest(url);
@@ -31,7 +31,7 @@ async function main() {
     setTimeout(function () {
         loader.hide();
         photos.forEach( function (photo) {
-            renderPhoto(photo.avatarUrl,photo.name);    
+            renderPhoto(photo.imageUrl,photo.name);    
         }
         );  
     
