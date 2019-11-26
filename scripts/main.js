@@ -1,77 +1,47 @@
-function renderPhoto(url) {
+function renderPhoto(url,name) {
     console.log("renderPhoto()");
-    // 1. Tworzenie elementu html 
     const $photo = document.createElement('img');
     $photo.src = url;
-    // 2. Dodanie "dziecka" (child) - elementu do juz istniejacego "rodzica" - parenta
+    $photo.alt = name;
     const $main = document.querySelector('main');
     $main.appendChild($photo);
 }
 
+function displayMessage(displayText) {
+    console.log("displayMessage()");
+    const $text = document.createElement('span');
+    $text.textContent = displayText;
+    $text.classList.add('alert', 'alert-danger');     // dodanie klas css
+    // 2. Dodanie "dziecka" (child) - elementu do juz istniejacego "rodzica" - parenta
+    const $main = document.querySelector('main');
+    $main.appendChild($text);    
+}
 
-function displayPhotos(photos) {
-    console.log("displayPhotos()");
+async function main() {
 
-    // for (let i of photos) {
-        //renderPhoto(i);
-        // renderPhoto(photos[1]);
-        // renderPhoto(photos[2]);
-    // }
+    loader.show();
+    const url = 'https://fakes.herokuapp.com/users';
+    const displayText = 'UWAGA TEXT';
+
+    const photos1 = await makeRequest(url);
+    const photos2 = await makeRequest(url);
+    const photos3 = await makeRequest(url);
+    let photos =[].concat(photos1, photos2, photos3);
     
-    // for (let i = 0; i < 3; i++) {
-    //      renderPhoto("https://picsum.photos/350/200?random=" + i);
-    // }
-
-    // photos.forEach(
-    //     // callback synchroniczny -> wywolanie zwrotne
-    //     function (photo) {
-    //         renderPhoto(photo);
-    //     }
-    // );
+    setTimeout(function () {
+        loader.hide();
+        photos.forEach( function (photo) {
+            renderPhoto(photo.avatarUrl,photo.name);    
+        }
+        );  
     
-    photos.forEach(renderPhoto);    // referencja do fukcji
-    //test
-    console.log(photos);
-}
+    }, 1000);
 
 
-function displayMessage(text, cssClass) {
-        console.log("displayMessage()");
-        // 1. Tworzenie elementu html 
-        const $text = document.createElement('p');
-        //$text.innerHTML = text  - tutaj parsuje HTML
-        //$text.innerText = text  - nie  parsuje HTML przy odczycie
-        $text.textContent = text;
-        $text.classList.add('alert', cssClass);     // dodanie klas 
-        // 2. Dodanie "dziecka" (child) - elementu do juz istniejacego "rodzica" - parenta
-        const $main = document.querySelector('main');
-        $main.appendChild($text);    
-}
+    //console.log('Wynik: ', photos);
 
-function main() {
-    console.log("main()");
-
-    const photos = [
-        "https://picsum.photos/350/200?random=1",
-        "https://picsum.photos/350/200?random=2",
-        "https://picsum.photos/350/200?random=3"
-    ];
-
-    if (photos.length > 0) {
-        displayPhotos(photos);
-    } else {
-        displayMessage("Nie ma zdjęć w galerii", 'alert-danger');
-    };
-
-    // const ONE_SECOND = 1000;
-    // setTimeout(function () {
-    //     displayMessage("Tekst to wyswietlenia", 'alert-danger');
-    // }, 2 * ONE_SECOND);
+    displayMessage(displayText);
 
 }
 
-console.log(1);
-window.addEventListener('DOMContentLoaded', main);  // po zaladowaniu HTML uruchomi main
-console.log(2);  //wyswietli sie 1 potem 2 a potem main, bo html jeszcze sie laduje
-
-// main();
+window.addEventListener('DOMContentLoaded', main);  
