@@ -30,7 +30,7 @@ function displayPhotos(photos) {
     // );
     
     photos.forEach(renderPhoto);    // referencja do fukcji
-
+    //test
     console.log(photos);
 }
 
