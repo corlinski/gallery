@@ -1,3 +1,6 @@
+const loader = require('./loader');
+const makeRequest = require('./request');
+
 function renderPhoto(url, name) {
     console.log("renderPhoto()");
     const $photo = document.createElement('img');

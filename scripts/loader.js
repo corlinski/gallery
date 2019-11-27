@@ -17,3 +17,6 @@ const loader = {
         $loader.remove();
     }
 };
+
+//exportowanie obiektu "loader"
+module.exports = loader;

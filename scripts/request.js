@@ -11,3 +11,5 @@ function makeRequest (url) {
             }
         }) 
 }
+
+module.exports = makeRequest;
