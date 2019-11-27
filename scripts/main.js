@@ -1,4 +1,4 @@
-function renderPhoto(url,name) {
+function renderPhoto(url, name) {
     console.log("renderPhoto()");
     const $photo = document.createElement('img');
     $photo.src = url;
@@ -14,11 +14,12 @@ function displayMessage(displayText) {
     $text.classList.add('alert', 'alert-danger');     // dodanie klas css
     // 2. Dodanie "dziecka" (child) - elementu do juz istniejacego "rodzica" - parenta
     const $main = document.querySelector('main');
-    $main.appendChild($text);    
+    $main.appendChild($text);
 }
 
 async function main() {
 
+    // eslint-disable-next-line no-undef
     loader.show();
     const url = 'data/photos.json';
     const displayText = 'UWAGA TEXT';
@@ -26,22 +27,20 @@ async function main() {
     const photos1 = await makeRequest(url);
     const photos2 = await makeRequest(url);
     const photos3 = await makeRequest(url);
-    let photos =[].concat(photos1, photos2, photos3);
-    
+    let photos = [].concat(photos1, photos2, photos3);
+
     setTimeout(function () {
         loader.hide();
-        photos.forEach( function (photo) {
-            renderPhoto(photo.imageUrl,photo.name);    
+        photos.forEach(function (photo) {
+            renderPhoto(photo.imageUrl, photo.name);
         }
-        );  
-    
+        );
     }, 1000);
 
 
     //console.log('Wynik: ', photos);
 
-    displayMessage(displayText);
-
+    //displayMessage(displayText);
 }
 
 window.addEventListener('DOMContentLoaded', main);  

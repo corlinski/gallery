@@ -113,7 +113,7 @@ async function main() {
         displayPhotos(urls);
     } else {
         displayMessage("Nie ma zdjęć w galerii", 'alert-danger');
-    };
+    }
 
 
     // fetchPhotos(photosUrl)
