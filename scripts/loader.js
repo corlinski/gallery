@@ -4,17 +4,18 @@ const loader = {
     show() {
         console.log('loader.show');
         // 1. Stworzenie 
-        const $loader = document.createElement('img');
-        $loader.src = 'images/831.svg';
-        $loader.id = 'loader';
+        // const $loader = document.createElement('img');
+        // $loader.src = 'images/831.svg';
+        // $loader.id = 'loader';
         // 2. renderowanie
-        const $main = document.querySelector('main');
-        $main.append($loader);
+        document.getElementById("loaderPlc").src =  'images/831.svg';
+        //const $main = document.querySelector('#loaderPlc');
+        //$main.append($loader);
     },
     hide() {
         console.log('loader.hide');
         // 1. lokalizacja
-        const $loader = document.querySelector('#loader');
+        const $loader = document.querySelector('#loaderPlc');
         // 2. usuwanie
         $loader.remove();
     }

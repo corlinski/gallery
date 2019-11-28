@@ -1,0 +1,176 @@
+2019-11-25/27 — Altkom — Warszawa — JavaScript
+
+--------------------------------------------------------------------------------
+--- DAY I ----------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+1. Weryfikacja środowiska
+git --version
+node -v
+   https://nodejs.org/
+npm -v
+
+2. Ustawienie danych użytkownika w Git
+git config --global user.name "Piotr Kowalski"
+git config --global user.email piecioshka@gmail.com
+
+3. Logownaie do portalu GitHub
+https://github.com/
+
+4. Spr. połączenia do GitHuba
+ssh -T git@github.com
+
+5. Wygenerowanie kluczy (prywatny, publiczny)
+ssh-keygen -t rsa -C NAZWA_MASZYNY
+
+Kopiujemy zawartość pliku
+notepad ~/.ssh/id_rsa.pub
+
+5. Dodanie klucza do GitHuba
+https://github.com/settings/keys
+Settings -> SSH keys -> Add new key
+
+-----------------------------------------
+
+github.new
+
+Piotr — https://github.com/piecioshka/2019-11-25-workshop-gallery
+Marta - https://github.com/kozlowicz-marta/gallery
+Czarek - https://github.com/corlinski/gallery
+Paweł - https://github.com/pawelpoz/gallery
+Ania - https://github.com/Annalares/2019-11-25-workshop-gallery-
+		https://github.com/Annalares/projekt.git
+Jacek - https://github.com/jacekkroczak/gallery
+Mariusz - https://github.com/maryan777/gallery
+Krzysiek - https://github.com/Bojaki/gallery
+
+----------------------------------------
+
+git add index.html
+git status
+git commit -m "Dodaj plik index.html"
+git push
+
+https://getbootstrap.com/
+
+d-flex flex-wrap justify-content-around
+
+https://flexboxfroggy.com/
+
+async vs defer
+https://www.growingwiththeweb.com/images/2014/02/26/async-vs-defer-twitter.png
+
+https://cheatsheets.piecioshka.pl/sources/vsc.html
+
+https://piecioshka.pl/blog/2018/12/12/dobre-praktyki-w-javascript-dolar-w-nazwie-zmiennej.html
+
+https://fakes.herokuapp.com/
+
+https://github.com/piecioshka/innerhtml-vs-innertext-vs-textcontent
+
+https://getbootstrap.com/docs/4.3/components/alerts/
+
+--------------------------------------------------------------------------------
+--- DAY II ---------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+JSON Formatter
+https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa
+
+https://fakes.herokuapp.com/photos
+
+https://http.cat/200
+
+https://httpstatusdogs.com/200
+
+https://github.com/piecioshka/2019-11-25-workshop-javascript-gallery/invitations
+
+https://icons8.com/preloaders
+
+https://specificity.keegan.st/
+
+CORS — Cross-origin resource sharing
+
+Stworzenie package.json
+npm init -f
+
+Rejestr z paczkami
+http://npmjs.org/
+
+Instalacja zależności — paczki (narzędzia), które uruchamia web serwer
+npm install http-server
+
+Uruchomienie serwera
+npm start
+
+--------------------------------------------------------------------------------
+--- DAY III --------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+# Na starcie
+
+1. Pobieramy dane (Fetch API) i je zapisujemy (In-memory, Cookies, LocalStorage)
+    fetch(url)
+2. Parsujemy dane (JSON.parse, json())
+    `Tworzymy strukturę na której chcemy pracować`
+3. Modyfikacja (Sortowanie, Filtrowanie)
+    [...].sort()
+4. Renderowanie
+    $target.append($child)
+
+# Interakcja użytkownika
+
+1. Kliknięcie
+2. Przechwytujemy zdarzenie
+3. Modyfikujemy dane
+4. Renderowanie
+
+https://piecioshka.pl/blog/2016/12/02/historia-jezyka-javascript.html
+
+https://www.youtube.com/watch?v=1W_BXitt8Eg
+
+http://kangax.github.io/compat-table/es7/
+
+https://piecioshka.pl/historia-front-endu/
+
+Specyfikacje:
+* ECMAScript
+    + Implementacja w Node.js oraz przeglądarce
+* CommonJS
+    + Implementacja w Node.js
+
+npm i eslint
+
+http://json.org/
+https://json5.org/
+
+http://jslint.com/
+
+https://webpack.js.org/
+
+Bundlowanie
+
+1. Scaleniu modułów
+    + Modułem może być dowolny plik *.js, *.css, *.png
+2. Wyprodukowaniu jednego pliku *.js
+    + Wynikowy plik nazywa się "bundle"
+
+Ścieżka absolutna
+/Users/piecioshka/projects-workshops/2019-11-25-workshop-javascript-gallery/node_modules/.bin/eslint
+
+Ścieżka relatywna
+./node_modules/.bin/eslint
+
+https://piecioshka.pl/blog/2016/05/24/ksiazka-tajniki-jezyka-javascript-na-drodze-do-bieglosci.html
+
+https://piecioshka.pl/blog/2016/05/20/ksiazka-tajniki-jezyka-javascript-zakresy-i-domkniecia.html
+
+https://www.w3fools.com/
+
+IntersectionObserver
+https://www.youtube.com/watch?v=Ojz4GtQPpSg
+https://www.youtube.com/watch?v=516hgt6wbnk
+
+https://www.altkomakademia.pl/online/auth/register/invitation/BS1qHxwo-bbtk-Y9mf-H3mP-wRBl8XBszggi
+
+---
